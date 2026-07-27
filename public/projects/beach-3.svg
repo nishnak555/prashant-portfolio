@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bg-275" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d2b3e" />
+      <stop offset="1" stop-color="#1c5d78" />
+    </linearGradient>
+    <radialGradient id="glow-275" cx="0.8" cy="0.15" r="0.6">
+      <stop offset="0" stop-color="#7fd7e8" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#7fd7e8" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid-275" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg-275)" />
+  <rect width="800" height="600" fill="url(#glow-275)" />
+  <rect width="800" height="600" fill="url(#grid-275)" />
+  <g>
+      <rect x="40.0" y="410.2" width="69.2" height="149.8" fill="#7fd7e8" opacity="0.28" rx="2" />
+      <rect x="119.8" y="288.9" width="63.2" height="271.1" fill="#7fd7e8" opacity="0.29" rx="2" />
+      <rect x="205.0" y="328.7" width="69.3" height="231.3" fill="#7fd7e8" opacity="0.29" rx="2" />
+      <rect x="290.5" y="467.2" width="75.9" height="92.8" fill="#7fd7e8" opacity="0.27" rx="2" />
+      <rect x="382.6" y="430.0" width="74.8" height="130.0" fill="#7fd7e8" opacity="0.17" rx="2" />
+      <rect x="470.8" y="342.2" width="89.6" height="217.8" fill="#7fd7e8" opacity="0.14" rx="2" />
+      <rect x="578.3" y="312.3" width="86.2" height="247.7" fill="#7fd7e8" opacity="0.18" rx="2" />
+  </g>
+  <rect x="0" y="560" width="800" height="40" fill="#1c5d78" opacity="0.6" />
+  <text x="40" y="546" font-family="Georgia, serif" font-size="15" letter-spacing="2" fill="#ffffff" opacity="0.55">BEACH HOUSE</text>
+</svg>

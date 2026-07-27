@@ -1,0 +1,27 @@
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-sm bg-opacity-30 bg-white border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply backdrop-blur-sm bg-black/30 border border-white/10;
+  }
+  
+  .glass-lg {
+    @apply backdrop-blur-md bg-opacity-40;
+  }
+}
+
+.glass-effect {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.glass-effect-dark {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

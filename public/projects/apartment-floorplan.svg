@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <pattern id="fgrid-209" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#7dd3fc" stroke-opacity="0.08" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="#0b1220" />
+  <rect width="800" height="600" fill="url(#fgrid-209)" />
+  <rect x="80" y="90" width="640" height="440" fill="none" stroke="#e2e8f0" stroke-width="3" />
+  <line x1="147.9" y1="447.4" x2="720" y2="447.4" stroke="#7dd3fc" stroke-opacity="0.5" stroke-width="2" />
+  <line x1="281.3" y1="147.0" x2="281.3" y2="530" stroke="#7dd3fc" stroke-opacity="0.5" stroke-width="2" />
+  <line x1="157.5" y1="461.8" x2="720" y2="461.8" stroke="#7dd3fc" stroke-opacity="0.5" stroke-width="2" />
+  <line x1="136.9" y1="485.7" x2="720" y2="485.7" stroke="#7dd3fc" stroke-opacity="0.5" stroke-width="2" />
+  <circle cx="150" cy="90" r="24" fill="none" stroke="#e2e8f0" stroke-width="2" opacity="0.6" />
+  <text x="80" y="60" font-family="'Courier New', monospace" font-size="18" letter-spacing="3" fill="#7dd3fc">FLOOR PLAN</text>
+  <text x="80" y="560" font-family="'Courier New', monospace" font-size="12" letter-spacing="2" fill="#7dd3fc" opacity="0.6">SCALE 1:100 · N ↑</text>
+</svg>

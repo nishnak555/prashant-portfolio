@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 560" width="480" height="560">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e293b" />
+      <stop offset="1" stop-color="#0f172a" />
+    </linearGradient>
+    <radialGradient id="pglow" cx="0.5" cy="0.35" r="0.55">
+      <stop offset="0" stop-color="#f59e0b" stop-opacity="0.25" />
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="480" height="560" fill="url(#pbg)" />
+  <rect width="480" height="560" fill="url(#pglow)" />
+  <circle cx="240" cy="230" r="92" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.35" />
+  <circle cx="240" cy="230" r="118" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.18" />
+  <text x="240" y="252" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#f5f5f4" text-anchor="middle">AJ</text>
+  <text x="240" y="470" font-family="Georgia, serif" font-size="22" fill="#e2e8f0" text-anchor="middle" letter-spacing="1">Alex Johnson</text>
+  <text x="240" y="498" font-family="'Courier New', monospace" font-size="13" fill="#f59e0b" text-anchor="middle" letter-spacing="3">ARCHITECT &amp; DESIGNER</text>
+</svg>

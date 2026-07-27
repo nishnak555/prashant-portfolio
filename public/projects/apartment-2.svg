@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bg-185" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827" />
+      <stop offset="1" stop-color="#374151" />
+    </linearGradient>
+    <radialGradient id="glow-185" cx="0.8" cy="0.15" r="0.6">
+      <stop offset="0" stop-color="#e5e7eb" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#e5e7eb" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid-185" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg-185)" />
+  <rect width="800" height="600" fill="url(#glow-185)" />
+  <rect width="800" height="600" fill="url(#grid-185)" />
+  <g>
+      <rect x="40.0" y="321.7" width="57.6" height="238.3" fill="#e5e7eb" opacity="0.21" rx="2" />
+      <rect x="119.9" y="424.4" width="78.5" height="135.6" fill="#e5e7eb" opacity="0.18" rx="2" />
+      <rect x="216.3" y="443.9" width="50.3" height="116.1" fill="#e5e7eb" opacity="0.22" rx="2" />
+      <rect x="287.8" y="464.2" width="78.2" height="95.8" fill="#e5e7eb" opacity="0.20" rx="2" />
+      <rect x="383.8" y="357.8" width="70.6" height="202.2" fill="#e5e7eb" opacity="0.29" rx="2" />
+      <rect x="472.3" y="396.2" width="67.8" height="163.8" fill="#e5e7eb" opacity="0.18" rx="2" />
+      <rect x="562.2" y="394.9" width="52.4" height="165.1" fill="#e5e7eb" opacity="0.28" rx="2" />
+      <rect x="638.2" y="470.4" width="44.3" height="89.6" fill="#e5e7eb" opacity="0.30" rx="2" />
+  </g>
+  <rect x="0" y="560" width="800" height="40" fill="#374151" opacity="0.6" />
+  <text x="40" y="546" font-family="Georgia, serif" font-size="15" letter-spacing="2" fill="#ffffff" opacity="0.55">MINIMALIST APARTMENT</text>
+</svg>

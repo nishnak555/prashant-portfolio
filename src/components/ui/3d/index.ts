@@ -1,0 +1,1 @@
+export { SimpleBuilding } from './SimpleBuilding'

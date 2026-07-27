@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bg-223" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f2027" />
+      <stop offset="1" stop-color="#203a43" />
+    </linearGradient>
+    <radialGradient id="glow-223" cx="0.8" cy="0.15" r="0.6">
+      <stop offset="0" stop-color="#66d9c9" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#66d9c9" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid-223" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg-223)" />
+  <rect width="800" height="600" fill="url(#glow-223)" />
+  <rect width="800" height="600" fill="url(#grid-223)" />
+  <g>
+      <rect x="40.0" y="271.1" width="45.9" height="288.9" fill="#66d9c9" opacity="0.24" rx="2" />
+      <rect x="107.5" y="401.4" width="48.7" height="158.6" fill="#66d9c9" opacity="0.14" rx="2" />
+      <rect x="167.5" y="405.0" width="66.1" height="155.0" fill="#66d9c9" opacity="0.14" rx="2" />
+      <rect x="252.1" y="333.4" width="88.3" height="226.6" fill="#66d9c9" opacity="0.12" rx="2" />
+      <rect x="355.9" y="442.1" width="47.9" height="117.9" fill="#66d9c9" opacity="0.13" rx="2" />
+      <rect x="414.0" y="407.6" width="64.8" height="152.4" fill="#66d9c9" opacity="0.23" rx="2" />
+      <rect x="494.4" y="379.5" width="73.4" height="180.5" fill="#66d9c9" opacity="0.17" rx="2" />
+  </g>
+  <rect x="0" y="560" width="800" height="40" fill="#203a43" opacity="0.6" />
+  <text x="40" y="546" font-family="Georgia, serif" font-size="15" letter-spacing="2" fill="#ffffff" opacity="0.55">INSTITUTE LECTURE HALL</text>
+</svg>
