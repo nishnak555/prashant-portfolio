@@ -1,12 +1,9 @@
 "use client"
 
-import { Suspense } from 'react'
 import { motion } from 'framer-motion'
-import { Canvas } from '@react-three/fiber'
-import { Environment, ContactShadows, OrbitControls } from '@react-three/drei'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 
-import { SimpleBuilding } from '@/components/ui/3d/SimpleBuilding'
+import { ArchitectureModelViewport } from '@/components/ui/visual/ArchitectureModelViewport'
 import { resumeData } from '@/data/resume'
 
 const stats = [
@@ -15,20 +12,11 @@ const stats = [
   { value: '20+', label: 'Awards & Features' },
 ]
 
-function CanvasLoading() {
-  return (
-    <mesh>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="#94a3b8" />
-    </mesh>
-  )
-}
-
 export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100dvh] w-full flex-col overflow-hidden bg-slate-950"
+      className="relative isolate flex min-h-[100dvh] w-full flex-col overflow-hidden bg-slate-950"
     >
       {/* Ambient gradient / grid backdrop */}
       <div className="pointer-events-none absolute inset-0 -z-20">
@@ -38,20 +26,18 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/40 to-slate-950" />
       </div>
 
-      {/* 3D visual — hidden on small screens for performance & layout clarity */}
-      <div className="absolute inset-0 -z-10 hidden md:block">
-        <Canvas camera={{ position: [0, 2, 5], fov: 50 }} shadows>
-          <Suspense fallback={<CanvasLoading />}>
-            <SimpleBuilding />
-            <Environment preset="city" />
-          </Suspense>
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[5, 10, 5]} intensity={1} castShadow />
-          <ContactShadows position={[0, 0.01, 0]} opacity={0.5} scale={10} blur={2} />
-          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
-        </Canvas>
-        {/* Fade the 3D scene toward the text side on large screens */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/60 to-transparent lg:via-slate-950/20" />
+      {/* Architecture animation — full-bleed faded backdrop on mobile, right-side panel from md up */}
+      <div className="absolute inset-0 -z-10 opacity-25 md:inset-y-0 md:inset-x-auto md:left-auto md:right-0 md:w-1/2 md:opacity-100 lg:w-[55%]">
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+          className="h-full w-full"
+        >
+          <ArchitectureModelViewport />
+        </motion.div>
+        {/* Soften only the seam where the animation meets the text column (desktop layout only) */}
+        <div className="absolute inset-y-0 left-0 hidden w-16 bg-gradient-to-r from-slate-950 to-transparent md:block sm:w-24 lg:w-32" />
       </div>
 
       {/* Content */}

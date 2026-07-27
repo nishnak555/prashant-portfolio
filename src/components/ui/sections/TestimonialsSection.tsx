@@ -1,9 +1,24 @@
 "use client"
 
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { testimonials } from '@/data/testimonials'
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+
+const slideVariants = {
+  enter: (direction: number) => ({
+    opacity: 0,
+    x: direction > 0 ? 60 : -60,
+  }),
+  center: {
+    opacity: 1,
+    x: 0,
+  },
+  exit: (direction: number) => ({
+    opacity: 0,
+    x: direction > 0 ? -60 : 60,
+  }),
+}
 
 const AVATAR_GRADIENTS = [
   'from-amber-500 to-orange-600',
@@ -23,7 +38,18 @@ function getInitials(name: string) {
 }
 
 export function TestimonialsSection() {
-  const [current, setCurrent] = useState(0)
+  const [[current, direction], setCurrent] = useState<[number, number]>([0, 0])
+
+  const paginate = (newDirection: number) => {
+    setCurrent(([prev]) => [
+      (prev + newDirection + testimonials.length) % testimonials.length,
+      newDirection,
+    ])
+  }
+
+  const goTo = (index: number) => {
+    setCurrent(([prev]) => [index, index > prev ? 1 : -1])
+  }
 
   return (
     <section id="testimonials" className="relative bg-slate-900/50 py-32">
@@ -43,52 +69,52 @@ export function TestimonialsSection() {
         </motion.div>
 
         <div className="relative">
-          <div className="relative h-64 md:h-80">
-            {testimonials.map((testimonial, index) => (
+          <div className="relative h-64 overflow-hidden md:h-80">
+            <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
-                key={testimonial.name}
-                className={`absolute inset-0 ${
-                  index !== current ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                }`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: current === index ? 1 : 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
+                key={current}
+                className="absolute inset-0"
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.45, ease: 'easeInOut' }}
               >
                 <div className="glass rounded-2xl p-8 max-w-3xl mx-auto shadow-glass">
                   <div className="flex flex-col items-center text-center">
                     <div
                       className={`flex h-16 w-16 items-center justify-center rounded-full mb-4 border-2 border-amber-500 bg-gradient-to-br font-serif text-lg font-bold text-white ${
-                        AVATAR_GRADIENTS[index % AVATAR_GRADIENTS.length]
+                        AVATAR_GRADIENTS[current % AVATAR_GRADIENTS.length]
                       }`}
                     >
-                      {getInitials(testimonial.name)}
+                      {getInitials(testimonials[current].name)}
                     </div>
                     <blockquote className="text-xl md:text-2xl text-slate-200 italic mb-6">
-                      &quot;{testimonial.quote}&quot;
+                      &quot;{testimonials[current].quote}&quot;
                     </blockquote>
                     <div>
                       <p className="text-lg font-serif font-bold text-white">
-                        {testimonial.name}
+                        {testimonials[current].name}
                       </p>
-                      <p className="text-amber-400">{testimonial.role}</p>
-                      <p className="text-slate-400 text-sm">{testimonial.project}</p>
+                      <p className="text-amber-400">{testimonials[current].role}</p>
+                      <p className="text-slate-400 text-sm">{testimonials[current].project}</p>
                     </div>
                   </div>
                 </div>
               </motion.div>
-            ))}
+            </AnimatePresence>
           </div>
 
           {/* Navigation */}
           <button
-            onClick={() => setCurrent((current - 1 + testimonials.length) % testimonials.length)}
+            onClick={() => paginate(-1)}
             className="absolute top-1/2 -left-4 transform -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 backdrop-blur-md transition-colors hover:border-white/30 hover:bg-white/10"
           >
             <ChevronLeft className="text-white" size={24} />
           </button>
           <button
-            onClick={() => setCurrent((current + 1) % testimonials.length)}
+            onClick={() => paginate(1)}
             className="absolute top-1/2 -right-4 transform -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 backdrop-blur-md transition-colors hover:border-white/30 hover:bg-white/10"
           >
             <ChevronRight className="text-white" size={24} />
@@ -99,7 +125,7 @@ export function TestimonialsSection() {
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrent(index)}
+                onClick={() => goTo(index)}
                 className={`w-3 h-3 rounded-full transition-colors ${
                   index === current ? 'bg-amber-500' : 'bg-slate-600 hover:bg-slate-400'
                 }`}

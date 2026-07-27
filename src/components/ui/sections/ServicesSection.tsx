@@ -33,7 +33,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative overflow-hidden bg-slate-900/50 py-32">
+    <section id="services" className="relative isolate overflow-hidden bg-slate-900/50 py-32">
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute top-0 right-1/4 h-96 w-96 rounded-full bg-indigo-500/10 blur-3xl" />
       </div>
@@ -61,10 +61,22 @@ export function ServicesSection() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <div className="glass rounded-2xl p-8 shadow-glass h-full transition-colors hover:border-amber-400/20">
-                <div className="w-16 h-16 rounded-2xl bg-amber-500/20 flex items-center justify-center mb-6">
+              <div className="group relative glass rounded-2xl p-8 shadow-glass h-full transition-colors hover:border-amber-400/20">
+                {/* CAD corner brackets — appear on hover */}
+                <span className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l-2 border-t-2 border-amber-400/0 transition-colors duration-300 group-hover:border-amber-400/50" />
+                <span className="pointer-events-none absolute right-3 top-3 h-4 w-4 border-r-2 border-t-2 border-amber-400/0 transition-colors duration-300 group-hover:border-amber-400/50" />
+                <span className="pointer-events-none absolute bottom-3 left-3 h-4 w-4 border-b-2 border-l-2 border-amber-400/0 transition-colors duration-300 group-hover:border-amber-400/50" />
+                <span className="pointer-events-none absolute bottom-3 right-3 h-4 w-4 border-b-2 border-r-2 border-amber-400/0 transition-colors duration-300 group-hover:border-amber-400/50" />
+
+                <motion.div
+                  className="w-16 h-16 rounded-2xl bg-amber-500/20 flex items-center justify-center mb-6"
+                  initial={{ opacity: 0, scale: 0.4, rotate: -90 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.15, ease: 'backOut' }}
+                >
                   <service.icon className="text-amber-400" size={28} />
-                </div>
+                </motion.div>
                 <h4 className="text-2xl font-serif font-bold text-white mb-3">
                   {service.title}
                 </h4>

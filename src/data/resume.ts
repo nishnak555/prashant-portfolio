@@ -1,6 +1,6 @@
 export const resumeData = {
   personal: {
-    name: 'Alex Johnson',
+    name: 'Prashant Pathak',
     title: 'Architect & Designer',
     email: 'alex@architecture.com',
     phone: '(555) 123-4567',

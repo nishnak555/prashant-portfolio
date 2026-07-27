@@ -49,13 +49,20 @@ export function ResumeSection() {
                     <span className="text-slate-300 text-sm">{skill.name}</span>
                     <span className="text-amber-400 text-sm">{skill.level}/5</span>
                   </div>
-                  <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div
+                    className="h-2 bg-slate-800 rounded-full overflow-hidden"
+                    style={{
+                      backgroundImage:
+                        'repeating-linear-gradient(to right, rgba(255,255,255,0.08) 0px 1px, transparent 1px 10%)',
+                    }}
+                  >
                     <motion.div
-                      className="h-full bg-amber-500 rounded-full"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level * 20}%` }}
+                      className="h-full origin-left rounded-full bg-gradient-to-r from-amber-500 to-amber-400"
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: skill.level / 5 }}
                       viewport={{ once: true, amount: 0.3 }}
-                      transition={{ duration: 0.8, delay: index * 0.1 }}
+                      transition={{ duration: 0.8, ease: 'easeOut', delay: index * 0.1 }}
+                      style={{ width: '100%', transformOrigin: 'left' }}
                     />
                   </div>
                 </div>

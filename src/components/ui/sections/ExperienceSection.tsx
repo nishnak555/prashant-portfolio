@@ -42,8 +42,14 @@ export function ExperienceSection() {
         </motion.div>
 
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-8 top-0 h-full w-px bg-slate-700" />
+          {/* Timeline Line — draws itself in as the section scrolls into view */}
+          <motion.div
+            className="absolute left-8 top-0 h-full w-px origin-top bg-gradient-to-b from-amber-400/60 via-slate-700 to-slate-700"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
+          />
 
           <div className="space-y-12 ml-16">
             {experience.map((item, index) => (
@@ -55,8 +61,11 @@ export function ExperienceSection() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                {/* Dot */}
-                <div className="absolute -left-3 top-6 w-6 h-6 rounded-full bg-amber-500 border-4 border-slate-950 shadow-lg shadow-amber-500/20" />
+                {/* Dot — pulsing ping like the Hero status badge */}
+                <span className="absolute -left-3 top-6 flex h-6 w-6 items-center justify-center">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400/60" />
+                  <span className="relative inline-flex h-6 w-6 rounded-full bg-amber-500 border-4 border-slate-950 shadow-lg shadow-amber-500/20" />
+                </span>
 
                 {/* Content */}
                 <div className="glass rounded-2xl p-6 shadow-glass transition-colors hover:border-amber-400/20">

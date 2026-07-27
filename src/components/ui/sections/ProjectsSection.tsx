@@ -31,6 +31,7 @@ export function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ y: -6, scale: 1.02 }}
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
@@ -39,8 +40,13 @@ export function ProjectsSection() {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* CAD corner brackets — fade in on hover */}
+                  <span className="pointer-events-none absolute left-3 top-3 h-5 w-5 border-l-2 border-t-2 border-amber-400/0 transition-colors duration-300 group-hover:border-amber-400/60" />
+                  <span className="pointer-events-none absolute right-3 top-3 h-5 w-5 border-r-2 border-t-2 border-amber-400/0 transition-colors duration-300 group-hover:border-amber-400/60" />
+                  <span className="pointer-events-none absolute bottom-3 left-3 h-5 w-5 border-b-2 border-l-2 border-amber-400/0 transition-colors duration-300 group-hover:border-amber-400/60" />
+                  <span className="pointer-events-none absolute bottom-3 right-3 h-5 w-5 border-b-2 border-r-2 border-amber-400/0 transition-colors duration-300 group-hover:border-amber-400/60" />
                 </div>
-                
+
                 <div className="p-6">
                   <motion.h4
                     className="text-2xl font-serif font-bold text-white mb-2"
