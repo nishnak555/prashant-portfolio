@@ -88,7 +88,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
             className="mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg md:text-xl"
           >
-            I'm {resumeData.personal.name}, a {resumeData.personal.title.toLowerCase()} crafting
+            I&apos;m {resumeData.personal.name}, a {resumeData.personal.title.toLowerCase()} crafting
             thoughtful, human-centered architecture — from concept sketches to finished spaces.
           </motion.p>
 

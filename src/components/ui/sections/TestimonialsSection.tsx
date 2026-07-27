@@ -65,7 +65,7 @@ export function TestimonialsSection() {
                       {getInitials(testimonial.name)}
                     </div>
                     <blockquote className="text-xl md:text-2xl text-slate-200 italic mb-6">
-                      "{testimonial.quote}"
+                      &quot;{testimonial.quote}&quot;
                     </blockquote>
                     <div>
                       <p className="text-lg font-serif font-bold text-white">

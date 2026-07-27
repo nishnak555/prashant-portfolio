@@ -41,7 +41,7 @@ export function ContactSection() {
             Get In Touch
           </h3>
           <p className="text-xl text-slate-400">
-            Let's discuss your project
+            Let&apos;s discuss your project
           </p>
         </motion.div>
 

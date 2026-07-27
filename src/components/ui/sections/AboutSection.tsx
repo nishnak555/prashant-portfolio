@@ -41,7 +41,7 @@ export function AboutSection() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              I'm an architect with over 6 years of experience designing spaces that
+              I&apos;m an architect with over 6 years of experience designing spaces that
               blend functionality with aesthetic excellence. My work focuses on
               creating environments that inspire and elevate everyday life.
             </motion.p>
