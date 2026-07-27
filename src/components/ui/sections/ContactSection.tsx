@@ -29,7 +29,11 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-32">
+    <section id="contact" className="relative overflow-hidden bg-slate-950 py-32">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-amber-500/10 blur-3xl" />
+        <div className="absolute top-0 right-1/4 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl" />
+      </div>
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <motion.div
           className="text-center mb-16"
@@ -60,13 +64,13 @@ export function ContactSection() {
               <input
                 type="text"
                 {...register('name')}
-                className={`w-full rounded-md bg-black/50 border border-white/10 px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 ${
-                  errors.name ? 'border-red-500' : ''
+                className={`w-full rounded-md bg-white/5 backdrop-blur-md border border-white/10 px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 ${
+                  errors.name ? 'border-red-400/70' : ''
                 }`}
                 placeholder="Your name"
               />
               {errors.name && (
-                <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+                <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
               )}
             </div>
 
@@ -77,13 +81,13 @@ export function ContactSection() {
               <input
                 type="email"
                 {...register('email')}
-                className={`w-full rounded-md bg-black/50 border border-white/10 px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 ${
-                  errors.email ? 'border-red-500' : ''
+                className={`w-full rounded-md bg-white/5 backdrop-blur-md border border-white/10 px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 ${
+                  errors.email ? 'border-red-400/70' : ''
                 }`}
                 placeholder="your@email.com"
               />
               {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
               )}
             </div>
 
@@ -94,13 +98,13 @@ export function ContactSection() {
               <input
                 type="text"
                 {...register('subject')}
-                className={`w-full rounded-md bg-black/50 border border-white/10 px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 ${
-                  errors.subject ? 'border-red-500' : ''
+                className={`w-full rounded-md bg-white/5 backdrop-blur-md border border-white/10 px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 ${
+                  errors.subject ? 'border-red-400/70' : ''
                 }`}
                 placeholder="Subject"
               />
               {errors.subject && (
-                <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
+                <p className="text-red-400 text-sm mt-1">{errors.subject.message}</p>
               )}
             </div>
 
@@ -111,21 +115,21 @@ export function ContactSection() {
               <textarea
                 {...register('message')}
                 rows={6}
-                className={`w-full rounded-md bg-black/50 border border-white/10 px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 resize-none ${
-                  errors.message ? 'border-red-500' : ''
+                className={`w-full rounded-md bg-white/5 backdrop-blur-md border border-white/10 px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 resize-none ${
+                  errors.message ? 'border-red-400/70' : ''
                 }`}
                 placeholder="Your message"
               />
               {errors.message && (
-                <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+                <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
               )}
             </div>
 
             <motion.button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full rounded-md bg-amber-500 px-6 py-3 font-medium text-black transition-all ${
-                isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-amber-600 hover:scale-105'
+              className={`w-full rounded-full bg-amber-500 px-6 py-3 font-semibold text-slate-950 shadow-lg shadow-amber-500/20 transition-all ${
+                isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-amber-400 hover:shadow-amber-400/30 hover:scale-105'
               }`}
               whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
             >

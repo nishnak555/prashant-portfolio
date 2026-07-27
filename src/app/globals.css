@@ -3,43 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 47.4% 11.2%;
-  --primary: 262.1 83.3% 57.8%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-  --accent: 262.1 83.3% 57.8%;
-  --accent-foreground: 210 40% 98%;
+  /* Always-dark theme: slate-950 canvas with amber accent, matching HeroSection */
+  --background: 222 47% 4%;
+  --foreground: 210 40% 98%;
+  --primary: 38 92% 60%;
+  --primary-foreground: 222 47% 4%;
+  --secondary: 222 47% 11%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 38 92% 60%;
+  --accent-foreground: 222 47% 4%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.5% 46.9%;
-  --popover: 210 40% 100%;
-  --popover-foreground: 222.2 47.4% 11.2%;
-  --card: 210 40% 100%;
-  --card-foreground: 222.2 47.4% 11.2%;
-}
-
-@supports (prefers-color-scheme: dark) {
-  :root {
-    --background: 210 40% 100%;
-    --foreground: 222.2 47.4% 11.2%;
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --accent: 262.1 83.3% 57.8%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.5% 46.9%;
-    --popover: 210 40% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
-    --card: 210 40% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
-  }
+  --muted: 215 28% 17%;
+  --muted-foreground: 215 20% 65%;
+  --popover: 222 47% 6%;
+  --popover-foreground: 210 40% 98%;
+  --card: 222 47% 6%;
+  --card-foreground: 210 40% 98%;
 }
 
 * {

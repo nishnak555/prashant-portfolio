@@ -10,7 +10,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Architecture Studio',
   description: 'Premium 3D architecture portfolio with immersive visuals',
-  themeColor: '#0f172a',
+  themeColor: '#020617',
   openGraph: {
     title: 'Architecture Studio',
     description: 'Premium 3D architecture portfolio with immersive visuals',
@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head />
       <body
-        className={`${inter.className} bg-black text-white min-h-screen overflow-x-hidden`}
+        className={`${inter.className} bg-slate-950 text-white min-h-screen overflow-x-hidden`}
       >
         {children}
       </body>

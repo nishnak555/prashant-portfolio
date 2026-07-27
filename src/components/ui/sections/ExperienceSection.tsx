@@ -25,7 +25,7 @@ const experience = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-32">
+    <section id="experience" className="relative bg-slate-900/50 py-32">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <motion.div
           className="text-center mb-16"
@@ -56,10 +56,10 @@ export function ExperienceSection() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
                 {/* Dot */}
-                <div className="absolute -left-3 top-6 w-6 h-6 rounded-full bg-amber-500 border-4 border-black" />
+                <div className="absolute -left-3 top-6 w-6 h-6 rounded-full bg-amber-500 border-4 border-slate-950 shadow-lg shadow-amber-500/20" />
 
                 {/* Content */}
-                <div className="glass rounded-2xl p-6 shadow-glass">
+                <div className="glass rounded-2xl p-6 shadow-glass transition-colors hover:border-amber-400/20">
                   <h4 className="text-2xl font-serif font-bold text-white mb-2">
                     {item.title}
                   </h4>

@@ -33,7 +33,10 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-32">
+    <section id="services" className="relative overflow-hidden bg-slate-900/50 py-32">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute top-0 right-1/4 h-96 w-96 rounded-full bg-indigo-500/10 blur-3xl" />
+      </div>
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <motion.div
           className="text-center mb-16"
@@ -58,8 +61,8 @@ export function ServicesSection() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <div className="glass rounded-2xl p-8 shadow-glass h-full">
-                <div className="w-16 h-16 rounded-md bg-amber-500/20 flex items-center justify-center mb-6">
+              <div className="glass rounded-2xl p-8 shadow-glass h-full transition-colors hover:border-amber-400/20">
+                <div className="w-16 h-16 rounded-2xl bg-amber-500/20 flex items-center justify-center mb-6">
                   <service.icon className="text-amber-400" size={28} />
                 </div>
                 <h4 className="text-2xl font-serif font-bold text-white mb-3">

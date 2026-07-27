@@ -16,7 +16,7 @@ const skills = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-32">
+    <section id="skills" className="relative bg-slate-950 py-32">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <motion.h3
           className="text-3xl font-serif font-bold text-center text-white mb-16"

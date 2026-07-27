@@ -5,7 +5,7 @@ import { resumeData } from '@/data/resume'
 
 export function ResumeSection() {
   return (
-    <section id="resume" className="py-32">
+    <section id="resume" className="relative bg-slate-950 py-32">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <motion.div
           className="text-center mb-16"
@@ -20,7 +20,7 @@ export function ResumeSection() {
             Download my resume or view my experience
           </p>
           <motion.button
-            className="rounded-md bg-amber-500 px-6 py-3 font-medium text-black hover:bg-amber-600 transition-all"
+            className="rounded-full bg-amber-500 px-7 py-3 font-semibold text-slate-950 shadow-lg shadow-amber-500/20 hover:bg-amber-400 hover:shadow-amber-400/30 active:scale-95 transition-all"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}

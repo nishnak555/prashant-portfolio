@@ -6,7 +6,7 @@ import { projects } from '@/data/projects'
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-32">
+    <section id="projects" className="relative bg-slate-950 py-32">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <motion.div
           className="text-center mb-16"
@@ -26,7 +26,7 @@ export function ProjectsSection() {
           {projects.map((project, index) => (
             <Link key={project.slug} href={`/projects/${project.slug}`}>
               <motion.div
-                className="group relative rounded-2xl overflow-hidden border border-white/10"
+                className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md transition-colors hover:border-amber-400/30"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -38,7 +38,7 @@ export function ProjectsSection() {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 
                 <div className="p-6">

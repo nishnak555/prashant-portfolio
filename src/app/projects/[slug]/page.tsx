@@ -12,14 +12,14 @@ export default function ProjectPage() {
 
   if (!project) {
     return (
-      <div className="flex min-h-screen items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-slate-950">
         <p className="text-xl text-slate-300">Project not found</p>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-slate-950 text-white">
       {/* Hero Section */}
       <section className="relative h-[60vh] overflow-hidden">
         <div className="absolute inset-0">
@@ -28,7 +28,7 @@ export default function ProjectPage() {
             alt={project.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
         </div>
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
           <motion.div
@@ -47,7 +47,7 @@ export default function ProjectPage() {
       </section>
 
       {/* Project Details */}
-      <section className="py-32">
+      <section className="relative bg-slate-900/50 py-32">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <Link
             href="/"

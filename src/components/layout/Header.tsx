@@ -31,11 +31,11 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
+        scrolled ? 'bg-slate-950/80 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
-        <Link href="/" className="text-2xl font-bold text-white">
+        <Link href="/" className="font-serif text-2xl font-bold text-white">
           Architecture
         </Link>
 
@@ -45,7 +45,7 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200 xl:text-base"
+              className="text-sm font-medium text-slate-300 hover:text-amber-300 transition-colors duration-200 xl:text-base"
             >
               {item.name}
             </Link>
@@ -68,13 +68,13 @@ export function Header() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="absolute inset-0 bg-black/95 flex flex-col items-center justify-center space-y-8"
+              className="absolute inset-0 bg-slate-950/95 backdrop-blur-md flex flex-col items-center justify-center space-y-8"
             >
               {navItems.map((item, index) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-2xl text-slate-300 hover:text-white transition-colors duration-200"
+                  className="text-2xl text-slate-300 hover:text-amber-300 transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

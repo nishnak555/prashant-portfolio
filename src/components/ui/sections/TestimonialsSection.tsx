@@ -7,8 +7,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const AVATAR_GRADIENTS = [
   'from-amber-500 to-orange-600',
-  'from-indigo-500 to-purple-600',
-  'from-teal-500 to-cyan-600',
+  'from-indigo-500 to-indigo-700',
+  'from-amber-400 to-indigo-500',
 ]
 
 function getInitials(name: string) {
@@ -26,7 +26,7 @@ export function TestimonialsSection() {
   const [current, setCurrent] = useState(0)
 
   return (
-    <section id="testimonials" className="py-32">
+    <section id="testimonials" className="relative bg-slate-900/50 py-32">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <motion.div
           className="text-center mb-16"
@@ -83,13 +83,13 @@ export function TestimonialsSection() {
           {/* Navigation */}
           <button
             onClick={() => setCurrent((current - 1 + testimonials.length) % testimonials.length)}
-            className="absolute top-1/2 -left-4 transform -translate-y-1/2 rounded-full p-2 bg-black/50 hover:bg-black/70 transition-colors"
+            className="absolute top-1/2 -left-4 transform -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 backdrop-blur-md transition-colors hover:border-white/30 hover:bg-white/10"
           >
             <ChevronLeft className="text-white" size={24} />
           </button>
           <button
             onClick={() => setCurrent((current + 1) % testimonials.length)}
-            className="absolute top-1/2 -right-4 transform -translate-y-1/2 rounded-full p-2 bg-black/50 hover:bg-black/70 transition-colors"
+            className="absolute top-1/2 -right-4 transform -translate-y-1/2 rounded-full border border-white/10 bg-white/5 p-2 backdrop-blur-md transition-colors hover:border-white/30 hover:bg-white/10"
           >
             <ChevronRight className="text-white" size={24} />
           </button>

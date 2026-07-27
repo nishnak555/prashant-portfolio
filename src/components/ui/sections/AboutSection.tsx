@@ -4,10 +4,11 @@ import { motion } from 'framer-motion'
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 -z-10">
+    <section id="about" className="relative bg-slate-900/50 py-32 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black_40%,transparent_100%)]" />
         <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 md:px-6">
@@ -32,7 +33,10 @@ export function AboutSection() {
           {/* Content */}
           <div>
             <h3 className="text-3xl font-serif font-bold text-white mb-6">
-              About Me
+              About{' '}
+              <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-orange-400 bg-clip-text text-transparent">
+                Me
+              </span>
             </h3>
             <motion.p
               className="text-lg text-slate-300 mb-6"
@@ -65,7 +69,7 @@ export function AboutSection() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <button className="rounded-md bg-amber-500 px-6 py-3 font-medium text-black hover:bg-amber-600 transition-colors">
+              <button className="rounded-full bg-amber-500 px-7 py-3 font-semibold text-slate-950 shadow-lg shadow-amber-500/20 hover:bg-amber-400 hover:shadow-amber-400/30 active:scale-95 transition-all">
                 Download Resume
               </button>
             </motion.div>
